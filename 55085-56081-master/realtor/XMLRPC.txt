@@ -1,0 +1,7 @@
+1.demande un login vue xml 
+2 function dans xml qui appele une fonction dans un model 
+3 model lance le script python qui recupere l'uid de celui qui veut se connecter 
+4 se connecte à la vue en fonction de l'uid récupérer
+attention connaitre ce qu'est le noupdate du fichier demo.xml
+clé Api: 6d6220ae213da9c2925c030ace711c5759e700e3 identify
+

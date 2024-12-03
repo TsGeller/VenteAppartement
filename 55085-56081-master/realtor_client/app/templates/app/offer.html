@@ -1,0 +1,59 @@
+{% extends '_base.html' %}
+{% block title%}Appartement{%endblock title%}
+{% block content%}
+
+{% if appartement %}
+
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Nom</th>
+        <th>Description</th>
+        <th>Date</th>
+        <th>Prix</th>
+        <th>Surface habitable</th>
+        <th>Surface du jardin</th>
+        <th>total</th>
+        <th>Quantite</th>
+        
+    </tr>
+    
+    <tr>
+      
+        <td>{{appartement.id}}</td>
+        <td>{{appartement.name}}</td>
+        <td>{{appartement.description}}</td>
+        <td>{{appartement.disponible_date}}</td>
+        <td>{{appartement.price}}</td>
+        <td>{{appartement.surface}}</td>
+        <td>{{appartement.garden_surface}}</td>
+        <td>{{appartement.total_surface}}</td>
+        <td>{{appartement.product_qty}}</td>
+
+    </tr>
+
+</table>
+
+<form action="{% url 'app:makeoffer' appartement.id %}" method="post">
+    {% csrf_token %}
+
+    {{ form }}
+    <input type="submit" value="Envoyer">
+
+</form>
+
+
+
+
+{% else %}
+<p>Aucun appartement n'a été trouvé</p>
+{% endif %}
+
+{% if error %}
+<p>{{ error }}</p>
+{% endif %}
+
+
+
+
+{%endblock content%}

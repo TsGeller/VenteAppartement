@@ -1,0 +1,3 @@
+A faire 
+1. completer buyer name en fonction des offres la plus grandes  faites dans offer_ids 
+2

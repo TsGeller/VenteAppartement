@@ -1,0 +1,75 @@
+<odoo>
+    <data>  
+       <!-- Partner -->
+    
+    
+    <record id="stock_inventory_0" model="stock.inventory">
+    <field name="name">Starting Inventory</field>
+    </record>
+    <!-- Product Category -->
+        <record id="appartement_category" model="product.category">
+            <field name="parent_id" ref="product.product_category_all" />
+            <field name="name">Apartements</field>
+        </record>
+    <!-- product appart03-->
+         <record id="product_03" model="product.product">
+            <field name="name">Appart3</field>            
+            <field name="type">product</field>             
+            <field name="categ_id" ref="appartement_category"/>
+            <field name="appartement_id" ref="realtor_appartement_03"/>
+        </record>
+        <!-- product appart03-->
+         <record id="product_01" model="product.product">
+            <field name="name">Appart1</field>            
+            <field name="type">product</field>             
+            <field name="categ_id" ref="appartement_category"/>
+            <field name="appartement_id" ref="realtor_appartement_01"/>
+        </record>
+        <!-- product appart03-->
+         <record id="product_02" model="product.product">
+            <field name="name">Appart2</field>            
+            <field name="type">product</field>             
+            <field name="categ_id" ref="appartement_category"/>
+            <field name="appartement_id" ref="realtor_appartement_02"/>
+        </record>
+
+        <record id="stock_inventory_line_3" model="stock.inventory.line">
+            <field name="product_id" ref="product_03"/>
+            <field name="product_uom_id" ref="uom.product_uom_unit"/>
+            <field name="inventory_id" ref="stock_inventory_0"/>
+            <field name="product_qty">33.0</field>            
+            <field name="location_id" model="stock.location" eval="obj().env.ref('stock.warehouse0').lot_stock_id.id"/>
+        </record>
+        <record id="stock_inventory_line_1" model="stock.inventory.line">
+            <field name="product_id" ref="product_01"/>
+            <field name="product_uom_id" ref="uom.product_uom_unit"/>
+            <field name="inventory_id" ref="stock_inventory_0"/>
+            <field name="product_qty">2.0</field>            
+            <field name="location_id" model="stock.location" eval="obj().env.ref('stock.warehouse0').lot_stock_id.id"/>
+        </record>
+        <record id="stock_inventory_line_2" model="stock.inventory.line">
+            <field name="product_id" ref="product_02"/>
+            <field name="product_uom_id" ref="uom.product_uom_unit"/>
+            <field name="inventory_id" ref="stock_inventory_0"/>
+            <field name="product_qty">5.0</field>            
+            <field name="location_id" model="stock.location" eval="obj().env.ref('stock.warehouse0').lot_stock_id.id"/>
+        </record>
+        <function model="stock.inventory" name="_action_start">
+            <function eval="[[('state','=','draft'),('id', '=', ref('stock_inventory_0'))]]" model="stock.inventory" name="search"/>
+        </function>
+        
+        <function model="stock.inventory" name="action_validate">
+            <function eval="[[('state','=','confirm'),('id', '=', ref('stock_inventory_0'))]]" model="stock.inventory" name="search"/>
+        </function>
+
+
+    
+    </data>
+</odoo>
+        
+        
+
+
+
+
+    

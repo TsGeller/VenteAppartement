@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>    
+  <data noupdate="1">  
+   <!--  Manager appart-->
+    <record id="partner_01" model="res.partner">
+    <field name="name">Immobilier Esi</field>      
+    </record>
+ <!-- First appartement -->
+        <record model="realtor.appartement" id="realtor_appartement_01">
+            <field name="name">Appartement 1</field>
+            <field name="description">This is the first appartement</field>
+            <field name="picture" type="base64" file="Realtor/static/pictures/appartement1.jpg"/>
+            <field name ="disponible_date">2024-01-01</field>
+            <field name="price">1000000</field>
+            <field name="surface">23</field>            
+        </record>
+        <!-- Second appartement -->
+        <record model="realtor.appartement" id="realtor_appartement_02">
+            <field name="name">Appartement 2</field>
+            <field name="description">This is the second appartement</field>
+            <field name="picture" type="base64" file="realtor/static/pictures/appartement2.jpg"/>
+            <field name ="disponible_date">2024-01-01</field>
+            <field name="price">2000000</field>
+            <field name="surface">34</field>
+            <field name="garden_surface">1</field>            
+        </record>
+        <!-- third appartement -->
+        <record model="realtor.appartement" id="realtor_appartement_03">
+            <field name="name">Appartement 3</field>
+            <field name="description">This is the third appartement</field>
+            <field name="picture" type="base64" file="realtor/static/pictures/appartement3.jpg"/>
+            <field name ="disponible_date">2024-01-01</field>
+            <field name="price">145000</field>
+            <field name="surface">21</field>
+            <field name="garden_surface">1</field>            
+        </record>
+        <!-- Product Category -->
+        <record id="appartement_category" model="product.category">
+            <field name="parent_id" ref="product.product_category_all" />
+            <field name="name">Apartements</field>
+        </record>
+       
+
+        
+        
+        
+  </data>
+</odoo>

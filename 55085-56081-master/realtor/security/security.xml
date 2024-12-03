@@ -1,0 +1,14 @@
+<odoo>
+	<record id="carton_caracters" model="res.groups">
+	    <field name="name">Cartoon manager</field>
+	</record>
+
+	<record id="task_manager" model="res.users">
+	    <field name="name">Eugene Krabs</field>
+	    <field name="email">eugene.krabs@he2b.be</field>
+	    <field name="password">money</field>    
+	    <field name="login">eugene.krabs@he2b.be</field>   
+	    <field name="employee">True</field>  
+	    <field name="groups_id" eval="[(6,0, [ref('base.group_user'),ref('todo_app.carton_caracters')])]"/>
+	</record>
+</odoo>

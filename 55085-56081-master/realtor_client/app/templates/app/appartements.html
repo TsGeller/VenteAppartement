@@ -1,0 +1,46 @@
+{% extends '_base.html' %}
+{% block title%}Appartement{%endblock title%}
+{% block content%}
+
+
+
+{% if appartements %}
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Nom</th>
+        <th>Description</th>
+        <th>Date</th>
+        <th>Prix</th>
+        <th>Surface habitable</th>
+        <th>Surface du jardin</th>
+        <th>total</th>
+        <th>Quantite</th>
+        <th>Offre</th>
+    </tr>
+    {% for appartement in appartements %}
+    <tr>
+      
+        <td>{{appartement.id}}</td>
+        <td>{{appartement.name}}</td>
+        <td>{{appartement.description}}</td>
+        <td>{{appartement.disponible_date}}</td>
+        <td>{{appartement.price}}</td>
+        <td>{{appartement.surface}}</td>
+        <td>{{appartement.garden_surface}}</td>
+        <td>{{appartement.total_surface}}</td>
+        <td>{{appartement.product_qty}}</td>
+        <td><a href="{% url 'app:offer' appartement.id %}">Offre</a> </td>
+        
+
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>Aucun appartement n'a été trouvé</p>
+{% endif %}
+
+
+
+
+{%endblock content%}

@@ -1,0 +1,33 @@
+<odoo>
+    <act_window id="action_appartement"
+        name="Appartement"
+        res_model="realtor.appartement"
+        view_mode="tree,form" />
+
+
+    <act_window id="action_offer"
+        name="Offer"
+        res_model="realtor.offer"
+        view_mode="tree,form" />
+
+    <menuitem
+        id="menu_appartement_root"
+        name="Appartement"
+    />
+
+    <menuitem
+        id="menu_appartement"
+        name="Appartement"
+        parent="menu_appartement_root"
+        action="action_appartement"
+    />
+
+    <menuitem
+        id="menu_offer"
+        name="Offer"
+        parent="menu_appartement_root"
+        action="action_offer"        
+    />
+
+
+</odoo>
